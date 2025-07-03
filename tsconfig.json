@@ -17,7 +17,8 @@
     "forceConsistentCasingInFileNames": true,
     "noImplicitAny": false,
     "strictBindCallApply": false,
-    "noFallthroughCasesInSwitch": false
+    "noFallthroughCasesInSwitch": false,
+    "esModuleInterop": true,
   },
 
   "include": ["dist/**/*.ts", "src/**/*.ts","src", "api"]
