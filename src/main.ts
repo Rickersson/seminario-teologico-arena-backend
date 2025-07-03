@@ -9,10 +9,10 @@ async function bootstrap() {
    app.useGlobalPipes(new ValidationPipe());
   // Permitir requisições do Angular (localhost:4200)
   app.enableCors({
-    origin: 'http://localhost:4200',
+    origin: ['http://localhost:4200', 'https://seminario-teologico-arena-frontend.vercel.app'],
     methods: 'GET,POST,PUT,DELETE,OPTIONS,HEAD',
     credentials: true,
-  });
+  },);
 
   await app.listen(3000);
 }
