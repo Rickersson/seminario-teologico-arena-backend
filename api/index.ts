@@ -1,5 +1,5 @@
 import { AppModule } from '../src/app.module';
+import { Handler } from '../src/server';
 import { createNestServer } from '../src/main';
-import { Handler} from '../src/server'
 
-export const handler = Handler(createNestServer(AppModule));
+export default Handler(createNestServer(AppModule));
