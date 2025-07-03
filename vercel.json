@@ -2,13 +2,13 @@
   "version": 2,
   "functions": {
     "api/index.ts": {
-      "runtime": "vercel-node@canary"
+      "runtime": "nodejs18.x"
     }
   },
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/api/index.ts"
+      "dest": "api/index.ts"
     }
   ]
 }
