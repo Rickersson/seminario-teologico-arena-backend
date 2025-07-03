@@ -1,5 +1,7 @@
 import { AppModule } from '../src/app.module';
-import { Handler } from '../src/server';
 import { createNestServer } from '../src/main';
 
-export default Handler(createNestServer(AppModule));
+module.exports = async (req: any, res: any) => {
+  const server = await createNestServer(AppModule);
+  return server(req, res);
+};
