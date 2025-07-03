@@ -1,15 +1,13 @@
 // src/main.ts
-import { ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
-import { NestExpressApplication } from '@nestjs/platform-express';
+import { ExpressAdapter } from '@nestjs/platform-express';
+import * as express from 'express';
 
-async function bootstrap() {
-  const app = await NestFactory.create<NestExpressApplication>(AppModule);
-   app.useGlobalPipes(new ValidationPipe());
-  // Permitir requisições do Angular (localhost:4200)
-  app.enableCors();
-
-  await app.listen(3000);
+export async function createNestServer(module: any) {
+  const expressApp = express();
+  const app = await NestFactory.create(module, new ExpressAdapter(expressApp));
+  app.enableCors(); 
+  await app.init();
+  return expressApp;
 }
-bootstrap();
