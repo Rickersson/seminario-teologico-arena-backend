@@ -8,11 +8,7 @@ async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
    app.useGlobalPipes(new ValidationPipe());
   // Permitir requisições do Angular (localhost:4200)
-  app.enableCors({
-    origin: ['http://localhost:4200', 'https://seminario-teologico-arena-frontend.vercel.app'],
-    methods: 'GET,POST,PUT,DELETE,OPTIONS,HEAD',
-    credentials: true,
-  },);
+  app.enableCors();
 
   await app.listen(3000);
 }
