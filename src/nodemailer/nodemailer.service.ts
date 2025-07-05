@@ -7,7 +7,7 @@ export class NodemailerService {
     service: 'gmail',
     auth: {
       user: 'henrique.jobandwork@gmail.com',
-      pass: '41323597M.m',
+      pass: 'zfgd nsqy jqhd rxfc',
     },
   });
 
