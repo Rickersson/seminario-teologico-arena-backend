@@ -10,10 +10,11 @@ import { AuthUser } from 'src/auth/interfaces/auth-user.interface';
 import * as bcrypt from 'bcrypt';
 import { Module } from './enums/module.enum';
 import { MongoServerError } from 'mongodb';
+import { NodemailerService } from 'src/nodemailer/nodemailer.service';
 
 @Injectable()
 export class AlunosService {
-  constructor(@InjectModel('Aluno') private alunoModel: Model<Aluno>) {}
+   constructor(@InjectModel('Aluno') private alunoModel: Model<Aluno>, private nodemailerService: NodemailerService) {}
 
   async create(createAlunoDto: CreateAlunoDto): Promise<Aluno> {
     const { cpf, email, senha } = createAlunoDto;
@@ -47,8 +48,16 @@ export class AlunosService {
       pagamento: false
     };
 
-    const createdAluno = new this.alunoModel(alunoData);
-    return await createdAluno.save();
+  const createdAluno = new this.alunoModel(alunoData);
+  const alunoSalvo = await createdAluno.save();
+
+  
+  await this.nodemailerService.enviarNovoUsuarioEmail(
+    createAlunoDto.nome,
+    createAlunoDto.email
+  );
+
+  return alunoSalvo;
   }
   async findAll(): Promise<Aluno[]> {
     const alunos = await this.alunoModel.find().lean().exec();

@@ -8,11 +8,13 @@ import { EbooksModule } from './ebooks/ebooks.module';
 import { AulasGravadasModule } from './aulas-gravadas/aulas-gravadas.module';
 import { AuthModule } from './auth/auth.module';
 import { ConfigModule } from '@nestjs/config';
+import { NodemailerService } from './nodemailer/nodemailer.service';
 
 @Module({
   imports: [ ConfigModule.forRoot({ isGlobal: true }),
     MongooseModule.forRoot('mongodb+srv://henriquesenacnig:41323597@seminarioarena.ibctzxd.mongodb.net/?retryWrites=true&w=majority&appName=SeminarioArena'), // Conexão com MongoDB
     AlunosModule, ProfessoresModule, EbooksModule, AulasGravadasModule, AuthModule,
   ],
+  providers: [NodemailerService],
 })
 export class AppModule {}
