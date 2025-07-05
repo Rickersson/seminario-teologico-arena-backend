@@ -13,5 +13,5 @@ export class AulaGravada implements IAulaGravada {
   categoria: string;
   createdAt: Date;
   updatedAt: Date;
-  quizLink:string;
+
 }

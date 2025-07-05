@@ -11,9 +11,7 @@ export const AulaGravadaSchema = new Schema({
   descricao: {
     type: String,
     required: false,
-  }, quizLink:{type: String,
-required:true
-  },
+  }, 
   link: {
     type: String,
     required: true,
@@ -21,8 +19,8 @@ required:true
    modulo: {
     type: String,
     required: true,
-    enum: Object.values(Module),
-    default: "Módulo I"
+    enum: Object.values(Module)
+   
   },
   autor: {
     type:String,

@@ -30,7 +30,7 @@ export const AlunoSchema = new Schema({
     type: String,
     required: true,
     enum: Object.values(Module),
-  default: Module.MODULE_I
+  default: Module.MODULE_0
   },
   notaGeral: {
     type: Number,

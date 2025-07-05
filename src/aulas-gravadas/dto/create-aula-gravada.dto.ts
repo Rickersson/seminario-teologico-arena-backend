@@ -25,7 +25,5 @@ export class CreateAulaGravadaDto {
   @IsString()
   categoria: string;
 
-  @IsString()
-  @IsUrl()
-  quizLink:string;
+ 
 }

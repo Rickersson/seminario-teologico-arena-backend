@@ -10,4 +10,5 @@ export interface IEbook {
   categoria: string;
   createdAt: Date;
   updatedAt: Date;
+  quizLink: string;
 }

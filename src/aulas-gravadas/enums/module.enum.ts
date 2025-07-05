@@ -1,6 +1,7 @@
 //src/aulas-gravadas/enums/module.enum.ts
 
 export enum Module {
+  MODULE_0 = 'Módulo 0',
   MODULE_I = 'Módulo I',
   MODULE_II = 'Módulo II',
   MODULE_III = 'Módulo III',

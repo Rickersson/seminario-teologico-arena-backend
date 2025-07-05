@@ -20,4 +20,5 @@ export class Ebook implements IEbook {
   categoria: string;
   createdAt: Date;
   updatedAt: Date;
+  quizLink: string;
 }

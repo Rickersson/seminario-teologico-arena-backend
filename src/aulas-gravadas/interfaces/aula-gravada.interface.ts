@@ -11,5 +11,5 @@ export interface IAulaGravada {
   categoria: String;
   createdAt: Date;
   updatedAt: Date;
-   quizLink:string;
+   
 }

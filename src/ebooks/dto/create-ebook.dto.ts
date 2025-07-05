@@ -1,6 +1,6 @@
 //src/ebooks/dto/create-ebook.dto.ts
 
-import { IsEnum, IsString } from 'class-validator';
+import { IsEnum, IsString, IsUrl } from 'class-validator';
 import { Module } from '../enums/module.enum';
 
 export class CreateEbookDto {
@@ -21,4 +21,8 @@ export class CreateEbookDto {
 
    @IsString()
    categoria: String
+ 
+   @IsString()
+   @IsUrl()
+   quizLink: string;
 }
