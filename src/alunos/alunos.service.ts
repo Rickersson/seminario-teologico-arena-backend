@@ -42,7 +42,7 @@ export class AlunosService {
       ...createAlunoDto,
       role: 'aluno',
       senha: await bcrypt.hash(senha, 10),
-      modulo: Module.MODULE_I,
+      modulo: Module.MODULE_0,
       notaGeral: 0,
       notaQuiz: 0,
       pagamento: false
