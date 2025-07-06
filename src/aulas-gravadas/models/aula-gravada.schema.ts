@@ -19,8 +19,8 @@ export const AulaGravadaSchema = new Schema({
    modulo: {
     type: String,
     required: true,
-    enum: Object.values(Module)
-   
+    enum: Object.values(Module),
+   default: Module.MODULE_I
   },
   autor: {
     type:String,

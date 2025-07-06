@@ -18,7 +18,7 @@ export const EbookSchema = new Schema(
       type: String,
       required: true,
       enum: Object.values(Module),
-      default: 'Módulo I',
+      default: Module.MODULE_I,
     },
     autor: {
       type: String,
