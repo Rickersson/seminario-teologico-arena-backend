@@ -7,7 +7,7 @@ export async function createNestServer(module: any) {
   const server = express();
   const app = await NestFactory.create(module, new ExpressAdapter(server));
   app.enableCors({
-  origin: '*',
+  origin: 'https://seminario-teologico-arena-frontend.vercel.app/',
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true
 });
