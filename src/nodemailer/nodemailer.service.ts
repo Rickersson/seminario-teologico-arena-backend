@@ -14,7 +14,7 @@ export class NodemailerService {
   async enviarNovoUsuarioEmail(nome: string, email: string): Promise<void> {
     const info = await this.transporter.sendMail({
       from: '"Sistema Seminário" <henrique.jobandwork@gmail.com>',
-      to: 'cursoteologicoarena@gmail.com',
+      to: 'henrique.senacnig@gmail.com',
       subject: 'Novo usuário registrado',
       text: `Novo usuário registrado:\n\nNome: ${nome}\nEmail: ${email}`,
     });
